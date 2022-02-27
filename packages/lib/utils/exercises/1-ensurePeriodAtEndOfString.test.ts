@@ -2,8 +2,8 @@ import * as Utils from './index';
 
 describe('ensurePeriodAtEndOfString', () => {
   it('return the same if the input already has a .', () => {
-    const input = "Hi, I'm Lucía.";
-    const expected = "Hi, I'm Lucía.";
+    const input = "Hi, I'm Julián.";
+    const expected = "Hi, I'm Julián.";
     const actual = Utils.ensurePeriodAtEndOfString(input);
     expect(actual).toEqual(expected);
   });

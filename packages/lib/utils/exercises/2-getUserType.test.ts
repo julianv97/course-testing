@@ -15,7 +15,7 @@ describe('getUserType', () => {
 
   it('returns "user" if the email does not end with "@radiumrocket.com"', () => {
     const expected = 'user';
-    const actual = Utils.getUserType('julian.vicente@fmail.com');
+    const actual = Utils.getUserType('julian.vicente@gmail.com');
     expect(actual).toBe(expected);
   });
 });
