@@ -11,6 +11,7 @@
  */
 export function ensurePeriodAtEndOfString(val?: string): string {
   if (!val) {
+    console.warn('val is falsy');
     return '';
   }
   return val.endsWith('.') ? val : `${val}.`;

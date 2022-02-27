@@ -15,10 +15,13 @@ describe('ensurePeriodAtEndOfString', () => {
     expect(actual).toEqual(expected);
   });
 
+  const warnSpy = jest.spyOn(console, 'warn').mockImplementation(jest.fn());
+
   it('shoul return an empty string if the input is falsy', () => {
     const input = '';
     const expected = '';
     const actual = Utils.ensurePeriodAtEndOfString(input);
     expect(actual).toEqual(expected);
+    expect(warnSpy).toHaveBeenCalledWith('val is falsy');
   });
 });
