@@ -14,7 +14,7 @@ type User = {
  * "{firstName: "Lucia", lastName: "Raschetti"}" -> "Lucia Raschetti"
  *
  */
-export const getFullName = (user: User): string => {
+export const getFullName = (user?: User): string => {
   if (!user) {
     return '';
   }
