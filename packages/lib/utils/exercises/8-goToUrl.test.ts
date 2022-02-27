@@ -5,9 +5,13 @@ import * as Utils from './index';
  */
 jest.mock('react-native', () => ({
   Linking: {
-    canOpenURL: jest
-      .fn()
-      .mockImplementation(() => new Promise(resolve => resolve(true))),
+    canOpenURL: (url: string) => {
+      if (url === 'https://www.google.com') {
+        return Promise.resolve(true);
+      } else {
+        return Promise.resolve(false);
+      }
+    },
     openURL: jest.fn(),
   },
 }));
