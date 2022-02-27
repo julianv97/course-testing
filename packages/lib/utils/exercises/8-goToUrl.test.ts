@@ -5,16 +5,15 @@ import * as Utils from './index';
  */
 jest.mock('react-native', () => ({
   Linking: {
-    canOpenURL: (url: string) => {
-      if (url === 'https://www.google.com') {
-        return Promise.resolve(true);
-      } else {
-        return Promise.resolve(false);
-      }
-    },
+    canOpenURL: jest.fn(() => new Promise(resolve => resolve(false))),
     openURL: jest.fn(),
   },
 }));
+
+/* jest.mock('react-native/Libraries/Linking/Linking', () => ({
+  openURL: jest.fn(),
+  canOpenURL: jest.fn(() => Promise.resolve(true)),
+})); */
 
 describe('goToUrlTest', () => {
   let warnSpy = jest.spyOn(console, 'warn').mockImplementation(jest.fn());
